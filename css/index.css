@@ -1,0 +1,173 @@
+@import "tailwindcss";
+/* =============================================
+   GLOBAL BASE STYLES - index.css
+   Master A/L ICT Student Portal
+   ============================================= */
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --orange: #FF8C42;
+  --orange-light: #FFB380;
+  --orange-pastel: #FFE0CC;
+  --blue: #4A90D9;
+  --blue-light: #7FB3E8;
+  --blue-pastel: #D6E8FA;
+  --white: #FAFAFA;
+  --sidebar-dark: #1a2a4a;
+  --sidebar-darker: #0f1d35;
+}
+.dark {
+  color-scheme: dark;
+}
+/* =============================================
+   SCROLLBAR STYLES
+   ============================================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF8C42;
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1e2a3a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #4A90D9;
+}
+/* =============================================
+   GLOBAL UTILITY CLASSES
+   ============================================= */
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+/* Glow effects */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 140, 66, 0.3);
+}
+.glow-blue {
+  box-shadow: 0 0 20px rgba(74, 144, 217, 0.3);
+}
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF8C42, #4A90D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Sidebar gradient */
+.sidebar-gradient {
+  background: linear-gradient(180deg, #1a2a4a 0%, #0f1d35 100%);
+}
+/* Orange gradient button */
+.btn-orange {
+  background: linear-gradient(135deg, #FF8C42, #FF6B1A);
+  transition: all 0.3s ease;
+}
+.btn-orange:hover {
+  background: linear-gradient(135deg, #FF6B1A, #FF8C42);
+  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.4);
+  transform: translateY(-1px);
+}
+/* Blue gradient button */
+.btn-blue {
+  background: linear-gradient(135deg, #4A90D9, #2563EB);
+  transition: all 0.3s ease;
+}
+.btn-blue:hover {
+  box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4);
+  transform: translateY(-1px);
+}
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+/* Nav active indicator */
+.nav-active {
+  background: linear-gradient(90deg, rgba(255, 140, 66, 0.2), transparent);
+  border-left: 3px solid #FF8C42;
+}
+/* Stars background */
+.stars-bg {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(2px 2px at 160px 20px, rgba(255,255,255,0.3), transparent);
+}
+/* =============================================
+   GLOBAL ANIMATIONS
+   ============================================= */
+/* Pulse animation */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.pulse-soft {
+  animation: pulse-soft 2s infinite;
+}
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+/* Bounce-in animation */
+@keyframes bounce-in {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.bounce-in {
+  animation: bounce-in 0.4s ease forwards;
+}
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+/* Typing dots */
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+.typing-dot:nth-child(1) { animation: typing 1.2s infinite 0s; }
+.typing-dot:nth-child(2) { animation: typing 1.2s infinite 0.2s; }
+.typing-dot:nth-child(3) { animation: typing 1.2s infinite 0.4s; }
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+/* Slide-in-left */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.slide-in-left {
+  animation: slideInLeft 0.4s ease forwards;
+}
+/* Progress bar fill */
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 60%; }
+}
+.fill-bar {
+  animation: fillBar 1.2s ease-out forwards;
+}
